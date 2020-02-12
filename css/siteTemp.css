@@ -1,0 +1,427 @@
+/* zcReset */
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video,input {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    color:#333;
+    border:none;
+    font-style: normal;
+    font-size:100%;
+    background:transparent;
+    outline: none;
+}
+/*html{
+    height: 100%;
+}*/
+html,
+body {
+    min-width: 1200px;
+    line-height:1;
+    /* font-family:Arial,"Lantinghei SC", "Helvetica Neue","Microsoft YaHei","WenQuanYi Micro Hei", "Heiti SC", "Segoe UI",  sans-serif; */
+    font-size: 14px;
+    background:#351fbd;
+    /*overflow-x:hidden;*/
+}
+pre{
+    /* font-family:Arial,"Lantinghei SC", "Helvetica Neue","Microsoft YaHei","WenQuanYi Micro Hei", "Heiti SC", "Segoe UI",  sans-serif; */
+}
+:focus {
+    outline: none;
+}
+article,aside,canvas,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section,summary {
+    display:block;
+}
+ul,ol {
+    list-style:none;
+}
+blockquote, q {
+    quotes:none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content:'';
+    content:none;
+}
+ins {
+    background-color:#ff9;
+    text-decoration:none;
+}
+mark {
+    background-color:#ff9;
+    font-style:italic;
+    font-weight:bold;
+}
+del {
+    text-decoration: line-through;
+}
+abbr[title], dfn[title] {
+    border-bottom:1px dotted #000;
+    cursor:help;
+}
+table {
+    width:100%;
+    border-collapse:collapse;
+    border-spacing:0;
+}
+hr {
+    display:block;
+    height:1px;
+    border:0;
+    border-top:1px solid #cccccc;
+    margin:1em 0;
+    padding:0;
+}
+input,textarea{
+    font-size: 14px;
+    /* font-family:Arial,"Lantinghei SC", "Helvetica Neue","Microsoft YaHei","WenQuanYi Micro Hei", "Heiti SC", "Segoe UI",  sans-serif; */
+}
+input, select {
+    vertical-align:middle;
+}
+input::-ms-clear {
+    display: none;
+}
+input:-webkit-autofill{
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
+}
+input:focus,
+textarea:focus {
+    border-color: #00a1f1!important;
+    box-shadow: 0px 0px 3px #56bef3;
+}
+input.error,
+textarea.error{
+    color: #333;
+}
+textarea{
+    resize: none;
+}
+input[disabled],
+textarea[disabled]{
+    color: #333!important;
+    opacity: 1!important;
+}
+a {
+    margin:0;
+    padding:0;
+    border:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+    text-decoration:none;
+    color: #333;
+}
+a:hover {
+    color: #00a1f1;
+    /*text-decoration:underline;*/
+}
+a:focus {
+    outline-style:none;
+}
+a:active, a:hover {
+    outline: 0;
+}/* placeholder */
+::-webkit-input-placeholder {
+    /* font-family:"Lantinghei SC", "Helvetica Neue","Microsoft YaHei","WenQuanYi Micro Hei", "Heiti SC", "Segoe UI", Arial, sans-serif; */
+    font-size: 12px;
+    color: #ccc;
+}
+:-moz-placeholder {
+    /* font-family:"Lantinghei SC", "Helvetica Neue","Microsoft YaHei","WenQuanYi Micro Hei", "Heiti SC", "Segoe UI", Arial, sans-serif; */
+    font-size: 12px;
+    color:#ccc;
+}
+::-moz-placeholder {
+    /* font-family:"Lantinghei SC", "Helvetica Neue","Microsoft YaHei","WenQuanYi Micro Hei", "Heiti SC", "Segoe UI", Arial, sans-serif; */
+    font-size: 12px;
+    color:#ccc;
+}
+:-ms-input-placeholder {
+    /* font-family:"Lantinghei SC", "Helvetica Neue","Microsoft YaHei","WenQuanYi Micro Hei", "Heiti SC", "Segoe UI", Arial, sans-serif; */
+    font-size: 12px;
+    color:#ccc;
+}
+
+:focus::-webkit-input-placeholder {
+    /* font-family:"Lantinghei SC", "Helvetica Neue","Microsoft YaHei","WenQuanYi Micro Hei", "Heiti SC", "Segoe UI", Arial, sans-serif; */
+    font-size: 12px;
+    color:#e8e8e8;
+}
+:focus:-moz-placeholder {
+    /* font-family:"Lantinghei SC", "Helvetica Neue","Microsoft YaHei","WenQuanYi Micro Hei", "Heiti SC", "Segoe UI", Arial, sans-serif; */
+    font-size: 12px;
+    color:#e8e8e8;
+}
+:focus::-moz-placeholder {
+    /* font-family:"Lantinghei SC", "Helvetica Neue","Microsoft YaHei","WenQuanYi Micro Hei", "Heiti SC", "Segoe UI", Arial, sans-serif; */
+    font-size: 12px;
+    color:    #e8e8e8;
+}
+:focus:-ms-input-placeholder {
+    /* font-family:"Lantinghei SC", "Helvetica Neue","Microsoft YaHei","WenQuanYi Micro Hei", "Heiti SC", "Segoe UI", Arial, sans-serif; */
+    font-size: 12px;
+    color:#e8e8e8;
+}
+
+/* 清除浮动 */
+.clear {
+  display: block;
+  #zoom:1;
+  /*ie6-ie7*/;
+}
+.clear:after {
+  content: '';
+  overflow: hidden;
+  width: 100%;
+  height: 0px;
+  font-size: 0px;
+  margin: 0px;
+  padding: 0px;
+  display: block;
+  clear: both;
+}
+body{
+  background: url(../img/img_04.jpg) 50% 0 repeat-y;
+}
+.cont{
+  width: 1200px;
+  margin: 0 auto;
+}
+.box{
+  border: 5px solid #dde7f0;
+  border-radius: 20px;
+  padding: 10px;
+  position: relative;
+  margin-bottom: 80px;
+}
+.box .t{
+  width: 482px;
+  height: 68px;
+  line-height: 68px;
+  font-weight: 600;
+  font-size: 28px;
+  text-align: center;
+  color: #fff;
+  display: inline-block;
+  background: url(../img/img_01.png) no-repeat 50% 50%;
+  position: absolute;
+  left: 50%;
+  top: -40px;
+  margin: 0 0 0 -241px;
+  font-style: italic;
+}
+.box .c{
+  background: #fff;
+  padding: 40px 0 0 0;
+}
+.box .b{
+  text-align: center;
+  font-size: 15px;
+  color: #fff;
+  padding: 20px 0 10px 0;
+}
+.section_01 {
+  text-align: center;
+  padding: 40px 0 100px 0;
+}
+.section_01 a{
+  color: #fff;
+  text-decoration: underline;
+}
+.section_02 ul{
+  padding: 0 35px;
+  /* padding: 0 5px;
+  margin: 0 -10px; */
+}
+.section_02 ul li{
+  float: left;
+  width: 33.3%;
+}
+.section_02 ul li>div{
+  margin: 0 5px;
+}
+.section_02 .liT{
+  height: 76px;
+  line-height: 76px;
+  background: #5783f4;
+  color: #fff;
+  font-size: 18px;
+  text-align: center;
+}
+.section_02 .liC{
+  height: 184px;
+  padding: 20px 0;
+  background: #e5f0ff;
+}
+.section_02 .liB{
+  text-align: center;
+  padding: 20px 0;
+}
+.section_02 .liC .table1{
+  margin-bottom: 20px;
+}
+.section_02 .liC .table1 td{
+  border-right: 1px solid #c5c5c5;
+  font-size: 14px;
+  padding: 5px 20px;
+  color: #666;
+}
+.section_02 .liC .table1 td:nth-last-child(1){
+  border-right: none;
+}
+.section_02 .liC .table1 td b{
+  font-size: 24px;
+  color: #666;
+  font-weight: normal;
+}
+.section_02 .liC .table2 td{
+  text-align: center;
+  font-size: 14px;
+  color: #666;
+  line-height: 28px;
+}
+.section_02 .liC .table2 .price{
+  color: #f43969;
+  font-size: 24px;
+}
+.section_02 .liC .table2 .original{
+  text-decoration: line-through;
+}
+.section_02 .liC .table2 a.btn{
+  margin-top: 15px;
+  display: inline-block;
+  height: 36px;
+  line-height: 36px;
+  font-size: 16px;
+  color: #fff;
+  width: 150px;
+  border-radius: 18px;
+/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#fe9505+0,ffb918+100 */
+background: rgb(254,149,5); /* Old browsers */
+background: -moz-linear-gradient(left,  rgba(254,149,5,1) 0%, rgba(255,185,24,1) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(left,  rgba(254,149,5,1) 0%,rgba(255,185,24,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to right,  rgba(254,149,5,1) 0%,rgba(255,185,24,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fe9505', endColorstr='#ffb918',GradientType=1 ); /* IE6-9 */
+
+}
+.section_03{
+  padding-bottom: 30px;
+}
+.section_03 ul{
+  padding: 0 35px;
+  /* padding: 0 5px;
+  margin: 0 -10px; */
+}
+.section_03 ul li{
+  float: left;
+  width: 33.3%;
+}
+.section_03 ul li>div{
+  margin: 0 5px;
+}
+.section_03 .liT{
+  height: 76px;
+  line-height: 76px;
+  background: #5783f4;
+  color: #fff;
+  font-size: 18px;
+  text-align: center;
+}
+.section_03 .liC{
+  height: 184px;
+  padding: 20px 0;
+  background: #e5f0ff;
+}
+.section_03 .liB{
+  text-align: center;
+  padding: 20px 0;
+}
+.section_03 .liC .table1{
+  margin-bottom: 20px;
+}
+.section_03 .liC .table1 td{
+  border-right: 1px solid #c5c5c5;
+  font-size: 14px;
+  padding: 5px 20px;
+  color: #666;
+}
+.section_03 .liC .table1 td:nth-last-child(1){
+  border-right: none;
+}
+.section_03 .liC .table1 td b{
+  font-size: 24px;
+  color: #666;
+  font-weight: normal
+}
+.section_03 .liC .table2 td{
+  text-align: center;
+  font-size: 14px;
+  color: #666;
+  line-height: 28px;
+}
+.section_03 .liC .table2 .price{
+  color: #f43969;
+  font-size: 24px;
+}
+.section_03 .liC .table2 .original{
+  text-decoration: line-through;
+}
+.section_03 .liC .table2 a.btn{
+  margin-top: 15px;
+  display: inline-block;
+  height: 36px;
+  line-height: 36px;
+  font-size: 16px;
+  color: #fff;
+  width: 150px;
+  border-radius: 18px;
+/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#fe9505+0,ffb918+100 */
+background: rgb(254,149,5); /* Old browsers */
+background: -moz-linear-gradient(left,  rgba(254,149,5,1) 0%, rgba(255,185,24,1) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(left,  rgba(254,149,5,1) 0%,rgba(255,185,24,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to right,  rgba(254,149,5,1) 0%,rgba(255,185,24,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fe9505', endColorstr='#ffb918',GradientType=1 ); /* IE6-9 */
+
+}
+.boxRule .c{
+  text-align: center;
+  padding: 50px 100px;
+}
+.boxRule .c p{
+  font-size: 14px;
+  line-height: 30px;
+  color: #5b698e;
+
+  text-align: left;
+}
+.boxRule a.btn{
+  margin-top: 15px;
+  display: inline-block;
+  height: 36px;
+  line-height: 36px;
+  font-size: 16px;
+  color: #fff;
+  width: 150px;
+  border-radius: 18px;
+  text-align: center;
+/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#fe9505+0,ffb918+100 */
+background: rgb(254,149,5); /* Old browsers */
+background: -moz-linear-gradient(left,  rgba(254,149,5,1) 0%, rgba(255,185,24,1) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(left,  rgba(254,149,5,1) 0%,rgba(255,185,24,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to right,  rgba(254,149,5,1) 0%,rgba(255,185,24,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fe9505', endColorstr='#ffb918',GradientType=1 ); /* IE6-9 */
+
+}
